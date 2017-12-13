@@ -1,0 +1,11 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">10dp</dimen>
+
+    <dimen name="autodraw_padding">50dp</dimen>
+    <dimen name="autodraw_top_padding">45dp</dimen>
+    <dimen name="autodraw_bootom_padding">55dp</dimen>
+    <dimen name="fingerdraw_padding">20dp</dimen>
+    <dimen name="lx_cx_btn_padding">60dp</dimen>
+</resources>

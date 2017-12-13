@@ -1,0 +1,35 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.icox.yunmuxuexi"
+        minSdkVersion 17
+        targetSdkVersion 21
+        versionCode 5
+        versionName "1.0.4"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            zipAlignEnabled false
+            proguardFiles 'proguard-rules.pro'
+        }
+    }
+    android.applicationVariants.all { variant ->
+        def file = variant.outputs[0].outputFile
+        def appReleaseFileName = applicationId.substring(applicationId.lastIndexOf(".") + 1, applicationId.length()) +
+                "-v" + versionName +
+                "-sign" + versionCode +
+                ".apk"
+        variant.outputs[0].outputFile = new File(file.parent, appReleaseFileName)
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:22.0.0'
+    compile project(':updateapp-release')
+}
